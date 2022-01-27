@@ -1,0 +1,77 @@
+#RegistrationPage{
+    height: 100%;
+    background-color: #4468ab;
+    font-size: 3.5vh;
+}
+
+/* The whole form */
+#RegistrationForm
+{
+    padding-top: 6%;
+    padding-left: 5%;
+    width: 50%;
+    font-size: 100%;
+}
+
+.form-group
+{
+    margin-top: 5%;
+}
+
+/* Form text holders */
+.form-control{
+    height: 100%;
+    margin-left: 1vw;
+    font-size: 100%;
+}
+
+.glyphicon-info-sign
+{
+    padding-top: 30%;
+    font-size: 100%;
+}
+
+.tooltip-text {
+    font-size: 80%;
+    visibility: hidden;
+    width: max-content;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.test:hover .tooltip-text {
+    visibility: visible;
+}
+
+/* Sign Up Button */
+.btn-primary{
+    margin-top: 7%;
+    margin-left: 5%;
+    width: 50%;
+    font-size: 150%;
+    height: 10vh;
+    border-radius: 15% / 50%;   /* ellipse */
+    background-color: white;
+    border-color: black;
+    color: black;
+}
+
+
+#RememberMe{
+    width: 3vw;
+    height: 3vh;
+}
+
+#RememberMeLabel {
+    color: white;
+    font-weight: normal;
+    font-size: 70%;
+}
+
