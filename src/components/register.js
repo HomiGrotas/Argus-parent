@@ -18,25 +18,34 @@ const FormButton = (props) => {
 
 
 const RegistrationForm = () => {
+  return (
+      <form id="RegistrationForm" action="/">
+          <table>
+              <tbody>
+              <FormButton type="email" placeholder=" Email" tip="Please enter your email here"/>
+              <FormButton type="password" placeholder=" Password" tip="Please select a password"/>
+              <FormButton type="password" placeholder=" Password Confirmation" tip="Please confirm your password"/>
+              <FormButton type="text" placeholder=" Nickname" tip="Please choose a nickname"/>
+              </tbody>
+          </table>
+
+          <div>
+              <button type="submit" className="btn btn-primary">Sign Up</button>
+          </div>
+
+          <div className="form-group">
+              <input type="checkbox" className="form-check-input" id="RememberMe"/>
+              <label className="form-check-label" id="RememberMeLabel" htmlFor="RememberMe">Remember me</label>
+          </div>
+      </form>
+  );
+}
+
+const RegistrationPage = () => {
     return (
         <div id="RegistrationPage">
-            <form id="RegistrationForm" action="/">
-                <table>
-                    <FormButton type="email" placeholder="Email" tip="Please enter your email here"/>
-                    <FormButton type="password" placeholder="Password" tip="Please select a password"/>
-                    <FormButton type="password" placeholder="Password Confirmation" tip="Please confirm your password"/>
-                    <FormButton type="text" placeholder="Nickname" tip="Please choose a nickname"/>
-                </table>
-
-                <div>
-                    <button type="submit" className="btn btn-primary">Sign Up</button>
-                </div>
-
-                <div className="form-group">
-                    <input type="checkbox" className="form-check-input" id="RememberMe"/>
-                    <label className="form-check-label" id="RememberMeLabel" htmlFor="RememberMe">Remember me</label>
-                </div>
-            </form>
+            <img src="background.png" alt="Argus Logo" id="Logo"/>
+            <RegistrationForm/>
         </div>
     );
 }
@@ -44,7 +53,7 @@ const RegistrationForm = () => {
 const Register = () => {
     return (
         <div id="RegistrationPage">
-            <RegistrationForm/>
+            <RegistrationPage/>
         </div>
     );
 };

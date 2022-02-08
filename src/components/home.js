@@ -1,4 +1,7 @@
 import React from 'react';
+/* import Parent from '../api/parent' */
+
+
 const Home = () => {
     return (
         <div>
