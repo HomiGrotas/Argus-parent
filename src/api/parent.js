@@ -1,13 +1,13 @@
 import configData from "../config.json"
-import {logDOM} from "@testing-library/react";
 
 
 class Parent {
     static endpoint = configData.SERVER_BASE_URL + "/parent";
 
-    static post(email, password, nickname)
+    static async post(email, password, nickname, setError)
     {
-        return fetch(Parent.endpoint, {
+        setError('Loading...')
+        const response = await fetch(Parent.endpoint, {
             "method": "POST",
             headers: {
                 'Accept': 'application/json',
@@ -19,17 +19,17 @@ class Parent {
                     password: password,
                     nickname: nickname,
                 })
-        })
-            .then(
-                function (request) {
-                    console.log(request.status);
-                    request.text().then(
-                        function (text) {
-                            console.log(text);
-                        }
-                    )
-                }
-            )
+        }).catch(error => {
+            return error.message
+            }
+        )
+
+        const data = await response.json();
+
+        if (response.status !== 201){
+            return JSON.stringify(data.message);
+        }
+        return null;
     }
 
 
