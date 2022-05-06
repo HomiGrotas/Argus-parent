@@ -1,0 +1,38 @@
+.navigation {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    background-color: #fff;
+    padding-top: 1.5%;
+    padding-left: 1.5%;
+    color: black;
+    font-size: 100%;
+  }
+
+  .brand-name{
+    font-weight: bold;
+    font-size: 200%;
+    text-decoration:none;
+  }
+
+  .navigation-menu{
+    width: 100%;
+  }
+
+  .navigation-menu ul {
+    float: right;
+    display: flex;
+    width: 100%;
+    margin-top: 0.4%;
+  }
+
+  .navigation-menu li {
+    list-style-type: none;
+    margin-left: 2%;
+    font-size: 150%;
+  }
+
+a:hover{
+      font-weight: bold;
+      text-decoration:none;
+  }

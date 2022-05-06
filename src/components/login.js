@@ -4,6 +4,7 @@ import Parent from '../api/parent';
 
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
+import Navbar from './utils/navbar';
 
 
 
@@ -53,10 +54,14 @@ const LoginForm = () => {
 const Login = () =>
 {
     return (
-        <div id="LoginPage">
-            <img src="background.png" alt="Argus Logo" id="Logo"/>
-            <LoginForm/>
+        <div>
+            <Navbar/>
+            <div id="LoginPage">
+                <img src="background.png" alt="Argus Logo" id="Logo"/>
+                <LoginForm/>
+            </div>
         </div>
+
     );
 }
 

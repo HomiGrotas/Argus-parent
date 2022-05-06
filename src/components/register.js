@@ -4,6 +4,7 @@ import {useNavigate} from "react-router-dom";
 
 import Parent from "../api/parent";
 import FormButton from "./utils/forms"
+import Navbar from './utils/navbar';
 
 
 const RegistrationForm = () => {
@@ -66,11 +67,6 @@ const RegistrationForm = () => {
           <div>
               {errorPreview && <p id="errorMessage"> {errorPreview} </p>}
               <button type="submit" className="btn btn-primary">Sign Up</button>
-
-              <div id="RememberMe">
-                <input type="checkbox" className="form-check-input" id="RememberMeBox"/>
-                <label className="form-check-label" id="RememberMeLabel" htmlFor="RememberMe">Remember me</label>
-              </div>
           </div>
 
       </form>
@@ -79,10 +75,14 @@ const RegistrationForm = () => {
 
 const Register = () => {
     return (
-        <div id="RegistrationPage">
-            <img src="background.png" alt="Argus Logo" id="Logo"/>
-            <RegistrationForm/>
+        <div>
+            <Navbar/>
+            <div id="RegistrationPage">
+                <img src="background.png" alt="Argus Logo" id="Logo"/>
+                <RegistrationForm/>
+            </div>
         </div>
+
     );
 }
 
