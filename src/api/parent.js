@@ -33,11 +33,33 @@ class Parent {
     }
 
 
-    static get()
+    static async get(email, password, setError)
     {
+
+        const response = await fetch(Parent.endpoint, {
+            headers: {
+                'Accept': 'application/json',
+                'Authorization': 'Basic ' + btoa(email + ":" + password) 
+            }
+
+        }).catch(error => {
+            return error.message
+            }
+        )
+        
+        if (response.status !== 200){
+            if (response.status === 401){
+                setError("Invalid username or password");
+            }
+
+            return null;
+        }
+
+        const data = await response.json();
+        return JSON.stringify(data);
     }
 
-    static patch()
+    static async patch()
     {
 
     }

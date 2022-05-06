@@ -1,0 +1,89 @@
+#LoginPage{
+    height: 100%;
+    background-color: #4472C4;
+    font-size: 1.65vw;
+}
+
+#Logo
+{
+    float: right;
+    width: 60%;
+    height: 100%;
+    margin-right: 10%;
+}
+
+/* The whole form */
+#LoginForm
+{
+    padding-top: 10%;
+    padding-left: 5%;
+    width: 50%;
+    font-size: 100%;
+}
+
+.form-group
+{
+    margin-top: 8%;
+    width: 100%;
+}
+
+/* Form text holders */
+.form-control{
+    height: 100%;
+    margin-left: 1vw;
+    font-size: 100%;
+    border-radius: 5vh;
+}
+
+.glyphicon-info-sign
+{
+    color: black;
+    padding-top: 30%;
+    font-size: 100%;
+}
+
+.tooltip-text {
+    font-size: 80%;
+    visibility: hidden;
+    width: 250px;
+    background-color: gray;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.test:hover .tooltip-text {
+    visibility: visible;
+}
+
+/* Login Button */
+.btn-primary{
+    margin-top: 2%;
+    margin-left: 7%;
+    width: 40%;
+    font-size: 150%;
+    height: 9vh;
+    border-radius: 15% / 50%;   /* ellipse */
+    background-color: white;
+    border-color: black;
+    color: black;
+}
+
+.btn-primary:hover {
+    background-color: white;
+    border-color: black;
+    color: black;
+    border-width: 2px;
+}
+
+#errorMessage{
+    color: #800202;
+    font-size: 100%;
+    font-weight: bold;
+    text-align: center;
+}

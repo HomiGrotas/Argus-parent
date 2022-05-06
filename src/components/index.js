@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Routes, Route}
 import Home from "./home";
 import Register from "./register";
 import NotFound from "./notFound";
+import Login from "./login";
+import Dashboard from './dashboard';
 
 
 const Webpages = () => {
@@ -15,6 +17,8 @@ const Webpages = () => {
                 <Route path='*' element={<NotFound/>} />
                 <Route path='/' element={<Home />} />
                 <Route path='/register' element={<Register/>} />
+                <Route path='/login' element={<Login/>} />
+                <Route path='/dashboard' element={<Dashboard/>} />
             </Routes>
         </Router>
     );

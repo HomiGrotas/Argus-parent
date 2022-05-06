@@ -1,22 +1,9 @@
 import '../css/register.css'
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
+
 import Parent from "../api/parent";
-
-
-const FormButton = (props) => {
-    return (
-        <tr>
-            <td className="test">
-                <span className="glyphicon glyphicon-info-sign form-group"> </span>
-                <span className="tooltip-text">{props.tip}</span>
-            </td>
-            <td>
-                <input type={props.type} className="form-control form-group" placeholder={props.placeholder} value={props.stateHook} onChange={(e) => props.setter(e.target.value)}/>
-            </td>
-        </tr>
-    );
-}
+import FormButton from "./utils/forms"
 
 
 const RegistrationForm = () => {
@@ -58,7 +45,7 @@ const RegistrationForm = () => {
                 navigate('/');
             }
             else{
-                setErrorPreview(errors);
+                setErrorPreview(errors.replaceAll('"', ""));
             }
         }
 
@@ -90,7 +77,7 @@ const RegistrationForm = () => {
   );
 }
 
-const RegistrationPage = () => {
+const Register = () => {
     return (
         <div id="RegistrationPage">
             <img src="background.png" alt="Argus Logo" id="Logo"/>
@@ -99,11 +86,4 @@ const RegistrationPage = () => {
     );
 }
 
-const Register = () => {
-    return (
-        <div id="RegistrationPage">
-            <RegistrationPage/>
-        </div>
-    );
-};
 export default Register;
