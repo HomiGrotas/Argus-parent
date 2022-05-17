@@ -1,11 +1,12 @@
 import '../css/login.css'
 import FormButton from "./utils/forms"
 import Parent from '../api/parent';
+import Auth from './utils/auth';
 
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import Navbar from './utils/navbar';
-
+import React from 'react';
 
 
 const LoginForm = () => {
@@ -17,13 +18,18 @@ const LoginForm = () => {
     const handleSubmit = async (e) =>
     {
         e.preventDefault();
-        const resp = await Parent.get(email, password, setErrorPreview);
-        console.log(resp);
-        if (resp){
-            navigate('/dashboard');
+        if (email !== "" && password !== ""){
+            const resp = await Parent.get(email, password, setErrorPreview);
+            if (resp){
+                Auth.SetAuth(email, password);
+                navigate('/dashboard');
+            }
+            else{
+                setPassword('');
+            }
         }
         else{
-            setPassword('');
+            setErrorPreview("Email and password can't be empty!");
         }
     }
 
@@ -53,6 +59,14 @@ const LoginForm = () => {
 
 const Login = () =>
 {
+    const navigate = useNavigate();
+
+    React.useEffect(() => {
+        if (Auth.GetAuth() != null) {
+          navigate('/dashboard');
+        }
+      });
+
     return (
         <div>
             <Navbar/>
