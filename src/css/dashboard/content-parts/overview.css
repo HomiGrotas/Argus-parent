@@ -1,0 +1,16 @@
+#Overview{
+    float: left;
+    display: flex;
+}
+
+#myChildren{
+    background-color: black;
+    width: 30%;
+    height: 100%;
+}
+
+#recentActivities{
+    background-color: aqua;
+    width: 70%;
+    height: 100%;
+}

@@ -2,6 +2,7 @@ import '../css/login.css'
 import FormButton from "./utils/forms"
 import Parent from '../api/parent';
 import Auth from './utils/auth';
+import {parent} from './utils/parentInfo';
 
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
@@ -22,6 +23,7 @@ const LoginForm = () => {
             const resp = await Parent.get(email, password, setErrorPreview);
             if (resp){
                 Auth.SetAuth(email, password);
+                parent = JSON.parse(resp);
                 navigate('/dashboard');
             }
             else{
