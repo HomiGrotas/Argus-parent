@@ -1,0 +1,12 @@
+#home{
+    background-color: #4472C4;
+    color: white;
+    text-align: left;
+    padding-left: 30%;
+    padding-top: 2%;
+    height: 90%;
+}
+
+#home span{
+    font-size: 150%;
+}

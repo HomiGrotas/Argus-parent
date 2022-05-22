@@ -1,0 +1,12 @@
+#dashboard{
+    font-size: 1.65vw;
+}
+
+#BlockedAppsContent{
+    height: 93%;
+    background-color: aqua;
+}
+
+#selectChild{
+    height: 8%;
+}

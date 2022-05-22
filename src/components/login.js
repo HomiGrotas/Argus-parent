@@ -2,11 +2,10 @@ import '../css/login.css'
 import FormButton from "./utils/forms"
 import Parent from '../api/parent';
 import Auth from './utils/auth';
-import {parent} from './utils/parentInfo';
 
-import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import Navbar from './utils/navbar';
+import {useState} from 'react';
 import React from 'react';
 
 
@@ -16,14 +15,13 @@ const LoginForm = () => {
     const [errorPreview, setErrorPreview] = useState('');
     const navigate = useNavigate();
 
-    const handleSubmit = async (e) =>
+    const HandleSubmit = async (e) =>
     {
         e.preventDefault();
         if (email !== "" && password !== ""){
             const resp = await Parent.get(email, password, setErrorPreview);
             if (resp){
                 Auth.SetAuth(email, password);
-                parent = JSON.parse(resp);
                 navigate('/dashboard');
             }
             else{
@@ -36,7 +34,7 @@ const LoginForm = () => {
     }
 
     return (
-        <form id="LoginForm" onSubmit={handleSubmit}>
+        <form id="LoginForm" onSubmit={HandleSubmit}>
         <table>
             <tbody>
             <FormButton type="email" placeholder=" Email" tip="Please enter your email here" stateHook={email} setter={setEmail}/>

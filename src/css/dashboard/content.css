@@ -1,9 +1,26 @@
 
 .DashboardContent{
     height: 93%;
+    width: 100%;
+    display: flex;
+}
+
+#right{
+    width: 50%;
+    height: 100%;
+    float: right;
+}
+
+#left{
+    width: 50%;
+    height: 100%;
+    float: left;
 }
 
 .Section{
-    width: 50%;
     height: 50%;
+    width: 100%;
+    border-color: #4472C4;
+    border-width: 2px;
+    border-style: solid;
 }

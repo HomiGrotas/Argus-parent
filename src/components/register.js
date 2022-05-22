@@ -43,7 +43,7 @@ const RegistrationForm = () => {
             const errors = await Parent.post(email, password, nickname, setErrorPreview);
             if (!errors)      // got to homepage after successful registration
             {
-                navigate('/');
+                navigate('/login');
             }
             else{
                 setErrorPreview(errors.replaceAll('"', ""));

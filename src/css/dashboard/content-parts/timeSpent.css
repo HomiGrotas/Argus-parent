@@ -1,4 +1,17 @@
 #timeSpent{
     float: left;
-    background-color: yellow;
+    height: 100%;
+    width: 90%;
+}
+
+#HoursGraph{
+    margin-top: 10%;
+    margin-left: 2%;
+    width: 100%;
+    height: 100%;
+}
+
+#apexcharts-legend{
+    height: 0px;
+
 }

@@ -1,13 +1,12 @@
 import Auth from './utils/auth';
-import Login from './login';
+import ParentContext from './utils/parentHook'
 import DashboardNavbar from './dashboard-parts/navbar';
 import Content from './dashboard-parts/content';
 import "../css/dashboard/dashboard.css"
 import Parent from '../api/parent';
-import {parent} from './utils/parentInfo';
 
-import React from 'react'
-import { useState } from 'react';
+import React from 'react';
+import {useState} from 'react'
 import {useNavigate} from "react-router-dom";
 
 
@@ -16,34 +15,33 @@ const Dashboard = () => {
     const [errorPreview, setErrorPreview] = useState('');
     const navigate = useNavigate();
     const auth = Auth.GetAuth();
+    const [parent, setParent] = useState(null);
 
-    React.useEffect( async() => {
+
+    React.useEffect(() => {
         console.log("checking auth...")
         if (auth == null){
             navigate('/login')
         }
         }
     )
-    
-    async function loadParent(){
-        if (parent == null){
-            const resp = await Parent.get(auth.e, auth.p, setErrorPreview);
-            parent = JSON.parse(resp);
-            console.log("succesfully loaded parent");
-            console.log(JSON.stringify(parent));
-        }
-        else{
-            console.log("parent was already loaded");
-        }
-    }
 
-    loadParent();
+    async function loadParent(){
+        const resp = await Parent.get(auth.e, auth.p, setErrorPreview);
+        console.log(resp);
+        setParent(JSON.parse(resp));
+        console.log("succesfully loaded parent");
+    }
+    loadParent()
+
 
     return (
-        <div id="dashboard">
-            <DashboardNavbar/>
-            <Content/>
-        </div> 
+        <ParentContext.Provider value={[parent, setParent]}>
+            <div id="dashboard">
+                <DashboardNavbar/>
+                <Content/>
+            </div> 
+        </ParentContext.Provider>
     );
 };
 export default Dashboard;

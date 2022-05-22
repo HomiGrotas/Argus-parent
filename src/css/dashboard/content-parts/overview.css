@@ -4,13 +4,61 @@
 }
 
 #myChildren{
-    background-color: black;
-    width: 30%;
+    width: 100%;
+    height: 100%;
+    padding-top: 5%;
+    padding-bottom: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+#myChildren p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 120%;
+}
+
+#myChildren li{
+    width: 100%;
+}
+
+#flexedChildren{
+    display: block;
+    padding-top: 5%;
+    width: 100%;
+    height: 90%;
+}
+
+#myChildrenTitle{
+    height: 10%;
+}
+
+#childrenLeft{
+    float: left;
+    width: 70%;
+    height: 100%;
+    padding-bottom: 1%;
+}
+
+#childrenList{
+    border-color: #4472C4;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 3%;
     height: 100%;
 }
 
-#recentActivities{
-    background-color: aqua;
-    width: 70%;
+
+.dot {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 5%;
+  }
+
+  #childrenOnInfo{
+    width: 30%;
     height: 100%;
-}
+    float: right;
+  }

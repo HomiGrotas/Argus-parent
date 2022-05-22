@@ -40,6 +40,7 @@ const Menu = () => {
     return (
         <div id="Menu">
             <DropdownButton id="dropdown-basic-button" title="Main">
+                <Dropdown.Item className="dropdownItem" href="/dashboard">Dashboard</Dropdown.Item>
                 <Dropdown.Item className="dropdownItem" href="/blockedWebsites">Blocked Websites</Dropdown.Item>
                 <Dropdown.Item className="dropdownItem" href="/blockedApps">Blocked Apps</Dropdown.Item>
                 <Dropdown.Item className="dropdownItem" href="/timeLimit">Time Limit</Dropdown.Item>
