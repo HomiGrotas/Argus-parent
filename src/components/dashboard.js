@@ -10,6 +10,17 @@ import {useState} from 'react'
 import {useNavigate} from "react-router-dom";
 
 
+async function loadParent(email, password, setParent, setErrorPreview){
+    if (email != null && password != null){
+        const resp = await Parent.get(email, password, setErrorPreview);
+        console.log(resp);
+        setParent(JSON.parse(resp));
+        console.log("succesfully loaded parent");
+        setTimeout(loadParent,
+            5000
+        )
+    }
+}
 
 const Dashboard = () => {
     const [errorPreview, setErrorPreview] = useState('');
@@ -19,20 +30,16 @@ const Dashboard = () => {
 
 
     React.useEffect(() => {
-        console.log("checking auth...")
-        if (auth == null){
-            navigate('/login')
-        }
+        console.log("checking auth...");
+            if (auth == null){
+                navigate('/login')
+            }
         }
     )
 
-    async function loadParent(){
-        const resp = await Parent.get(auth.e, auth.p, setErrorPreview);
-        console.log(resp);
-        setParent(JSON.parse(resp));
-        console.log("succesfully loaded parent");
+    if (auth != null){
+        loadParent(auth.e, auth.p, setParent, setErrorPreview);
     }
-    loadParent()
 
 
     return (
