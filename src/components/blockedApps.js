@@ -8,11 +8,17 @@ import React, {useState} from 'react'
 import {useNavigate} from "react-router-dom";
 import Select from 'react-select'
 
+async function loadParent(email, password, setParent, setErrorPreview){
+    const resp = await Parent.get(email, password, setErrorPreview);
+    setParent(JSON.parse(resp));
+}
 
 const BlockedAppsList = (props) => {
     return (
         <div>
-            {props.apps ? props.apps : "No Blocked apps"}
+            <ul>
+                <li key={props.apps}>{props.apps ? props.apps : "No Blocked apps"} </li>
+            </ul>
         </div>
     );
 }
@@ -62,17 +68,13 @@ const BlockedApps = () => {
 
     React.useEffect(() => {
         console.log("checking auth...")
-        if (auth == null){
-            navigate('/login')
-        }
-        }
+            if (auth == null){
+                navigate('/login')
+            }
+            loadParent(auth.e, auth.p, setParent, setErrorPreview);
+        }, []
     )
 
-    async function loadParent(){
-        const resp = await Parent.get(auth.e, auth.p, setErrorPreview);
-        setParent(JSON.parse(resp));
-    }
-    loadParent()
 
     return (
         <div id='dashboard'>

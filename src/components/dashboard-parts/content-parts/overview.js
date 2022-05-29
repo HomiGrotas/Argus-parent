@@ -15,7 +15,7 @@ const MyChildren = () => {
                     <div id="childrenLeft">
                         <ul>
                             { parent != null && parent.children.map( child =>
-                                    <li>
+                                    <li key={child.id}>
                                         {child.nickname}<span className='dot' style={{backgroundColor: child.connected ? "green" : "red"}}></span>
                                     </li>
                                 )

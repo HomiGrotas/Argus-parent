@@ -16,9 +16,6 @@ async function loadParent(email, password, setParent, setErrorPreview){
         console.log(resp);
         setParent(JSON.parse(resp));
         console.log("succesfully loaded parent");
-        setTimeout(loadParent,
-            5000
-        )
     }
 }
 
@@ -34,13 +31,9 @@ const Dashboard = () => {
             if (auth == null){
                 navigate('/login')
             }
-        }
+            loadParent(auth.e, auth.p, setParent, setErrorPreview);
+        }, []
     )
-
-    if (auth != null){
-        loadParent(auth.e, auth.p, setParent, setErrorPreview);
-    }
-
 
     return (
         <ParentContext.Provider value={[parent, setParent]}>
