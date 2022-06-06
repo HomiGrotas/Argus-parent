@@ -1,11 +1,11 @@
 import configData from "../config.json"
 
-class BlockedAppsAPI {
-    static endpoint = configData.SERVER_BASE_URL + "/blocked_apps";
+class BlockedWebsitesAPI {
+    static endpoint = configData.SERVER_BASE_URL + "/blocked_websites";
 
     static async get(email, password, id, setError)
     {
-        const response = await fetch(BlockedAppsAPI.endpoint+"?id=" + id, {
+        const response = await fetch(BlockedWebsitesAPI.endpoint+"?id=" + id, {
             headers: {
                 'Accept': 'application/json',
                 'Authorization': 'Basic ' + btoa(email + ":" + password) 
@@ -28,9 +28,9 @@ class BlockedAppsAPI {
         return data;
     }
 
-    static async post(email, password, id, BlockedApp, setError)
+    static async post(email, password, id, BlockedWebsite, setError)
     {
-        const response = await fetch(BlockedAppsAPI.endpoint+"?id=" + id, {
+        const response = await fetch(BlockedWebsitesAPI.endpoint+"?id=" + id, {
             "method": "POST",
             headers: {
                 'Accept': 'application/json',
@@ -38,7 +38,7 @@ class BlockedAppsAPI {
                 'Authorization': 'Basic ' + btoa(email + ":" + password) 
             },
              body: JSON.stringify(
-                 {app:BlockedApp}
+                 {domain:BlockedWebsite}
              )
 
         }).catch(error => {
@@ -50,18 +50,16 @@ class BlockedAppsAPI {
             if (response.status === 401){
                 setError("Invalid username or password");
             }
-            const error = await response.json()
-            setError(error.message);
-            return
+            return await response.json();
         }
 
         const data = await response.json();
         return data;
     }
 
-    static async delete(email, password, id, BlockedApp, setError)
+    static async delete(email, password, id, BlockedWebsite, setError)
     {
-        const response = await fetch(BlockedAppsAPI.endpoint+"?id=" + id, {
+        const response = await fetch(BlockedWebsitesAPI.endpoint+"?id=" + id, {
             "method": "DELETE",
             headers: {
                 'Accept': 'application/json',
@@ -69,11 +67,11 @@ class BlockedAppsAPI {
                 'Authorization': 'Basic ' + btoa(email + ":" + password) 
             },
              body: JSON.stringify(
-                 {app:BlockedApp}
+                 {domain:BlockedWebsite}
              )
 
         }).catch(error => {
-            setError(error);
+            return error.message
             }
         )
 
@@ -81,6 +79,8 @@ class BlockedAppsAPI {
             if (response.status === 401){
                 setError("Invalid username or password");
             }
+
+            return await response.json();
         }
 
         const data = await response.json();
@@ -88,4 +88,4 @@ class BlockedAppsAPI {
     }
 }
 
-export default BlockedAppsAPI
+export default BlockedWebsitesAPI

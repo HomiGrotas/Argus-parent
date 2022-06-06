@@ -3,10 +3,65 @@
 }
 
 #BlockedAppsContent{
-    height: 93%;
-    background-color: aqua;
+    height: 92%;
+}
+
+#halfs{
+    display: flex;
+    height: 92%;
 }
 
 #selectChild{
     height: 8%;
+    border: 0px;
+}
+
+#appsList{
+    padding-left: 1%;
+    height: 91.2%;
+    width: 50%;
+}
+
+#appsList ul{
+    list-style-type: none;
+}
+
+#appsList h1{
+    padding-left: 6%;
+    margin-bottom: 5%;
+}
+
+#appsList li{
+    margin-top: 1%;
+    background-color: aquamarine;
+    border-color: aqua;
+    border-style: solid;
+    width: 80%;
+}
+
+.DeleteApp{
+    color: red;
+    font-weight: bold;
+    margin-right: 2%;
+}
+
+#blockApp{
+    background-color: red;
+    width: 50%;
+    height: 100%;
+    padding-left: 10%;
+}
+
+#blockAppButton{
+    margin-top: 0px;
+    margin-left: 1vw;
+    width: 30%;
+    height: 20%;
+    font-size: 100%;
+}
+
+#error{
+    margin-top: 3%;
+    margin-left: 1vw;
+    font-size: 100%;
 }

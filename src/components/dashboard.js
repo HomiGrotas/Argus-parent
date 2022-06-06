@@ -30,8 +30,9 @@ const Dashboard = () => {
         console.log("checking auth...");
             if (auth == null){
                 navigate('/login')
+            }else{
+                loadParent(auth.e, auth.p, setParent, setErrorPreview);
             }
-            loadParent(auth.e, auth.p, setParent, setErrorPreview);
         }, []
     )
 

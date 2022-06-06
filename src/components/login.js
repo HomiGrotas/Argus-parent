@@ -46,14 +46,9 @@ const LoginForm = () => {
         <div>
             {errorPreview && <p id="errorMessage"> {errorPreview} </p>}
             <button type="submit" className="btn btn-primary">Login</button>
-
-            <div id="RememberMe">
-              <input type="checkbox" className="form-check-input" id="RememberMeBox"/>
-              <label className="form-check-label" id="RememberMeLabel" htmlFor="RememberMe">Remember me</label>
-            </div>
         </div>
 
-    </form>    )
+    </form>    );
 }
 
 

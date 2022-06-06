@@ -14,18 +14,27 @@ const GraphBar = () =>
 
       const state = {
         options: {
-          chart: {
-            id: "basic-bar"
+          title: {
+            text: "Usage Hours",
+            align: "center",
           },
+          chart: {
+            id: "basic-bar",
+            toolbar: {
+              show: false,
 
+            }
+          },
+          sparkline: {
+            enabled: true
+          },
           xaxis: {
             categories: categories
           },
-          dataLabels: {
-            enabled: false
-          },
-          legend: {
-            show: false
+          yaxis:{
+            tooltip: {
+              enabled: false
+            }
           }
         },
         series: [
@@ -40,11 +49,14 @@ const GraphBar = () =>
       return (
         <div id="HoursGraph">
               <Chart
+                id="chart"
                 options={state.options}
                 series={state.series}
                 type="bar"
-                width="100%"
-                height="80%"
+                width="400"
+                height="100%"
+                background-color="green"
+                color="black"
               />
         </div>
       );
