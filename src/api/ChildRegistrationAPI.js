@@ -1,14 +1,12 @@
-// import configData from "../config.json"
-import fetch from "node-fetch";
+import configData from "../config.json"
 
-class JWTtoken
+class ChildRegistrationAPI
 {
-    //static endpoint = configData.SERVER_BASE_URL + "/parent/child_registration_token
-    static endpoint = "http://127.0.0.1:80/" + "parent/child_registration_token";
+    static endpoint = configData.SERVER_BASE_URL + "/parent/child_registration_token"
 
-    static async get(email, password)
+    static async get(email, password, setError)
     {
-        const response = await fetch(JWTtoken.endpoint, {
+        const response = await fetch(ChildRegistrationAPI.endpoint, {
             headers: {
                 'Accept': 'application/json',
                 'Authorization': 'Basic ' + btoa(email + ":" + password) 
@@ -33,4 +31,4 @@ class JWTtoken
 }
 
 
-export default JWTtoken;
+export default ChildRegistrationAPI;

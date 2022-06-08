@@ -23,7 +23,7 @@
 }
 
 #flexedChildren{
-    display: block;
+    display: flex;
     padding-top: 5%;
     width: 100%;
     height: 90%;
@@ -67,8 +67,37 @@
     margin-left: 5%;
   }
 
+  #AddChildRight{
+      width: 70%;
+      height: 100;
+      float: right;
+  }
+
   #childrenOnInfo{
-    width: 30%;
-    height: 100%;
+    padding-right: 10%;
+    width: 100%;
+    height: 30%;
     float: right;
+    text-align: right;
+  }
+  
+  #AddChildDiv{
+      padding-top: 3%;
+      width: 100%;
+      float: right;
+      height: 70%;
+  }
+
+  #AddChildLabel{
+      padding-top: 2%;
+      text-align: center;
+      height: 25%;
+      font-size: 90%;
+  }
+
+  #GetToken{
+      font-size: 80%;
+      width: 80%;
+      height: 50%;
+      margin-left: 15%;
   }

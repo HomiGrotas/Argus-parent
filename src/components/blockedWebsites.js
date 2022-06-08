@@ -38,6 +38,7 @@ const BlockAppUI = (props) => {
         const auth = Auth.GetAuth();
         const answer = await BlockedWebsitesAPI.post(auth.e, auth.p, props.childID, blockedApp, setError);
         setBlockedApp("");
+        console.log(error)
         if (answer){
             props.apps[blockedApp] = "";
             props.setBlockedApps(Object.assign({}, props.apps))

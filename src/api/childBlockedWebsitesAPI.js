@@ -50,7 +50,9 @@ class BlockedWebsitesAPI {
             if (response.status === 401){
                 setError("Invalid username or password");
             }
-            return await response.json();
+            const error = await response.json()
+            setError(error.message.domain);
+            return
         }
 
         const data = await response.json();
