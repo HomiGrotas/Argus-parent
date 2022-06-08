@@ -35,9 +35,19 @@
 
 #childrenLeft{
     float: left;
-    width: 70%;
+    min-width: fit-content;
+    width: 40%;
+    max-width: 70%;
     height: 100%;
     padding-bottom: 1%;
+}
+
+
+#childrenLeft ul{
+    overflow: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    height: 90%;
 }
 
 #childrenList{

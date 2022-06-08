@@ -8,7 +8,7 @@
 
 #halfs{
     display: flex;
-    height: 92%;
+    height: 93%;
 }
 
 #selectChild{
@@ -18,22 +18,28 @@
 
 #appsList{
     padding-left: 1%;
-    height: 91.2%;
+    height: 100%;
     width: 50%;
+    border-color: #4472C4;
+    border-style: solid;
 }
 
 #appsList ul{
     list-style-type: none;
+    overflow: hidden;
+    overflow-y: scroll;
+    scroll-behavior: auto;
+    height: 70%;
 }
 
 #appsList h1{
     padding-left: 6%;
-    margin-bottom: 5%;
+    margin-bottom: 5%
 }
 
 #appsList li{
     margin-top: 1%;
-    background-color: aquamarine;
+    background-color: rgb(127, 219, 255);
     border-color: aqua;
     border-style: solid;
     width: 80%;
@@ -41,16 +47,21 @@
 
 .DeleteApp{
     color: red;
-    font-weight: bold;
+    font-weight: 900;
     margin-right: 2%;
 }
 
 #blockApp{
-    background-color: red;
+    background-color: #4472C4;
     width: 50%;
     height: 100%;
     padding-left: 10%;
 }
+
+h1{
+    font-weight: bold;
+}
+
 
 #blockAppButton{
     margin-top: 0px;

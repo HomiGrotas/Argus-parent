@@ -48,7 +48,7 @@ const BlockAppUI = (props) => {
         <div id="blockApp" onSubmit={handleBlockApp}>
             <form>
                 <div>
-                    <h1>Block apps</h1>
+                    <h1>Application to block</h1>
                 </div>
                 <div>
                     <table>
@@ -106,7 +106,7 @@ const BlockedAppsList = (props) => {
 const BlockedAppsContent = (props) => {
     const options = [];
     const [blockedApps, setBlockedApps] = useState({});
-    const [childID, setChildID] = useState();
+    const [childID, setChildID] = useState(null);
 
     if (props.parent)
     {
@@ -124,7 +124,6 @@ const BlockedAppsContent = (props) => {
             setBlockedApps(await BlockedAppsAPI.get(auth.e, auth.p, e.value));
         }
     }
-    loadChildInfo();
 
     return (
         <div id='BlockedAppsContent'>
