@@ -25,6 +25,11 @@ const RegistrationForm = () => {
             setErrorPreview("Password and Password Conformation don't match!")
             return false;
         }
+        if (password.length < 6)
+        {
+            setErrorPreview("Password minimum length is 6 chars");
+            return false;
+        }
         return true;
     }
     
