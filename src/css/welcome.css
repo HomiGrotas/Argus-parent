@@ -1,0 +1,41 @@
+#WelcomePage{
+    height: 90%;
+}
+
+#Logo
+{
+    float: right;
+    width: 55%;
+    height: 100%;
+}
+
+#WelcomeContent
+{
+    padding-top: 2%;
+    padding-left: 2%;
+    float: left;
+    height: 100%;
+    width: 45%;
+    background-color: #4472C4;
+    color: #FFF;
+}
+
+#WelcomeLabel
+{
+    height: 10%;
+    font-size: 250%;
+    font-weight: bold;
+}
+
+.welcome-section{
+    height: 35%;
+    margin-top: 2.5%;
+    padding-bottom: 5%;
+    font-size: 120%;
+}
+
+#WelcomeContent a{
+    color: #FFF;
+    text-decoration: underline;
+
+}

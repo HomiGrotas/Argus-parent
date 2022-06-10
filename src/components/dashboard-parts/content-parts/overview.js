@@ -37,6 +37,9 @@ const MyChildren = () => {
                                     </li>
                                 )
                             }
+                            { parent != null && parent.children.length ===0 &&
+                                <label>- No Children -</label>
+                            }
                         </ul>
                     </div>
                     <div id='AddChildRight'>

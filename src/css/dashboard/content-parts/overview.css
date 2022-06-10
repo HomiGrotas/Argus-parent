@@ -35,7 +35,6 @@
 
 #childrenLeft{
     float: left;
-    min-width: fit-content;
     width: 40%;
     max-width: 70%;
     height: 100%;
@@ -48,6 +47,14 @@
     overflow-y: scroll;
     scroll-behavior: smooth;
     height: 90%;
+}
+
+#childrenLeft label{
+    font-size: 100%;
+    color: black;
+    text-align: center;
+    font-weight: 100;
+    padding-top: 30%;
 }
 
 #childrenList{

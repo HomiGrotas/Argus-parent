@@ -5,6 +5,18 @@ import Chart from 'react-apexcharts'
 import React, { useContext } from "react";
 
 
+const NoChildrenPopup = () =>
+ {
+   return (
+     <div id='noChildrenPopup'>
+       <span>
+        Oops! It seems you have no children registered. <br></br><br></br>
+        In order to register your children, follow the instructions on the 'First steps' section on the right
+       </span>
+     </div>
+   );
+ }
+
 const GraphBar = () => 
 {
       const [parent, ] = useContext(ParentContext);
@@ -14,10 +26,23 @@ const GraphBar = () =>
 
       const state = {
         options: {
+          dataLabels: {
+            enabled: true,
+            style: {
+              fontSize: "100%",
+              fontFamily: "Arial",
+              fontWeight: "100"
+            }
+          },
           title: {
             text: "Usage Hours",
             align: "center",
+            style: {
+              fontSize:  '30px',
+              fontWeight:  'normal'
+            }
           },
+
           chart: {
             id: "basic-bar",
             toolbar: {
@@ -29,11 +54,23 @@ const GraphBar = () =>
             enabled: true
           },
           xaxis: {
-            categories: categories
+            categories: categories,
+            labels: {
+              style: {
+                fontSize: '18px',
+                fontWeight: 500,
+              },
+            }
           },
           yaxis:{
             tooltip: {
               enabled: false
+            },
+            labels: {
+              style: {
+                fontSize: '18px',
+                fontWeight: 500,
+              },
             }
           }
         },
@@ -48,13 +85,13 @@ const GraphBar = () =>
   
       return (
         <div id="HoursGraph">
+              {parent && parent.children.length === 0 && <NoChildrenPopup/>}
               <Chart
                 id="chart"
+                height="100%"
                 options={state.options}
                 series={state.series}
                 type="bar"
-                width="400"
-                height="100%"
                 background-color="green"
                 color="black"
               />
@@ -64,8 +101,6 @@ const GraphBar = () =>
   
 
 const TimeSpent = () => {
-
-
     return (
         <div id='timeSpent'>
           <GraphBar/>

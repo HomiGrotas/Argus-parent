@@ -5,7 +5,7 @@
     font-size: 120%;
     font-weight: bold;
     background-color: #4472C4;
-
+    color: white;
 }
 
 #Menu{
@@ -13,9 +13,10 @@
 }
 
 #clock{
-    width: 33%;
+    width: 28%;
     text-align: right;
     padding-right: 2%;
+    padding-top: 0.5%;
 }
 
 .DashboardBrand{
@@ -55,4 +56,24 @@
 
 .dropdownItem, dropdownItem:focus, dropdownItem:hover{
     color: white !important;
+}
+
+#LogoutDiv
+{
+    width: 5%;
+}
+
+#logout{
+    background-color: #4472C4;
+    border-color: #4472C4;
+    color: #FFFF;
+    font-weight: 100;
+    font-size: 50%;
+    border-color: white;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    float: right;
+    margin-top: 19%;
+    margin-right: 10%;
 }

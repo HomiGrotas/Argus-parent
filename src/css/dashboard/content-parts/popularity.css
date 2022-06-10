@@ -1,3 +1,14 @@
-#popularity{
-    float: left;
+#popularitySection{
+    padding-left: 1%;
+    padding-top: 1%;
+}
+
+#firstSteps li
+{
+    font-size: 95%;
+    padding-bottom: 0.5%;
+}
+
+#firstSteps a{
+    font-weight: 100;
 }

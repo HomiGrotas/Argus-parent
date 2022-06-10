@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import {DropdownButton, Dropdown} from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom';
 
 import "../../css/dashboard/navbar.css"
 
@@ -26,10 +27,34 @@ const Clock = () =>{
     );
   }
 
+  const Logout = () => 
+  {
+    const navigate = useNavigate();
+
+    function logout()
+    {
+      console.log("exit");
+      localStorage.removeItem('auth');
+      navigate("/");
+    }
+
+    return(
+      <div id='LogoutDiv'>
+          <button id='logout' className="" onClick={logout}>Logout</button>
+      </div>
+    );
+  }
+
 
 const Brand = () =>{
+  const navigate = useNavigate();
+    function onClick()
+    {
+      navigate('/dashboard');
+    }
+
     return (
-        <div className='DashboardBrand'>
+        <div className='DashboardBrand' onClick={onClick} role="button">
             <span id='DashboardTitle'>Argus</span>
             <img src="shield.png" alt="shield" id='shield'/>
         </div>
@@ -39,7 +64,7 @@ const Brand = () =>{
 const Menu = () => {
     return (
         <div id="Menu">
-            <DropdownButton id="dropdown-basic-button" title="Main">
+            <DropdownButton id="dropdown-basic-button" title="Menu">
                 <Dropdown.Item className="dropdownItem" href="/dashboard">Dashboard</Dropdown.Item>
                 <Dropdown.Item className="dropdownItem" href="/blockedWebsites">Blocked Websites</Dropdown.Item>
                 <Dropdown.Item className="dropdownItem" href="/blockedApps">Blocked Apps</Dropdown.Item>
@@ -56,6 +81,7 @@ const DashboardNavbar =() => {
             <Menu/>
             <Brand/>
             <Clock/>
+            <Logout/>
         </div>
     );
 }

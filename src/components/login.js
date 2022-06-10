@@ -37,8 +37,8 @@ const LoginForm = () => {
         <form id="LoginForm" onSubmit={HandleSubmit}>
         <table>
             <tbody>
-            <FormButton type="email" placeholder=" Email" tip="Please enter your email here" stateHook={email} setter={setEmail}/>
-            <FormButton type="password" placeholder=" Password" tip="Please select a password" stateHook={password} setter={setPassword}/>
+            <FormButton type="email" placeholder=" Email" tip="Please enter your email" stateHook={email} setter={setEmail}/>
+            <FormButton type="password" placeholder=" Password" tip="Please enter your password" stateHook={password} setter={setPassword}/>
             </tbody>
         </table>
 
