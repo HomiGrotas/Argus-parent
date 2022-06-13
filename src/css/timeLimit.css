@@ -1,0 +1,37 @@
+#TimeLimitTable
+{
+    width: 50%;
+    padding-left: 2%;
+    height: 100%;
+}
+
+#TimeLimitTable li
+{
+    padding-top: 1%;
+}
+
+#TimeLimitTable span
+{
+    float: right;
+    padding-right: 60%;
+}
+
+#TimeLimitTable label{
+    font-size: 200%;
+}
+
+#ChangeTimeLimit
+{
+    padding-left: 2%;
+    background-color: #4472C4;
+    width: 50%;
+    height: 100%;
+}
+
+#Options
+{
+    height: 10%;
+    overflow: visible;
+    width: 90%;
+    padding-top: 2%;
+}

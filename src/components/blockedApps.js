@@ -89,6 +89,7 @@ const BlockedAppsList = (props) => {
     return (
         <div id="appsList">
             <h1>Blocked Apps List</h1>
+            {!props.childID && <span>Please choose a child first</span>}
             <ul>
                 {apps.map(app => 
                         <li key={app} className="list-group-item"> 

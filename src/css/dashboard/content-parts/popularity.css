@@ -12,3 +12,10 @@
 #firstSteps a{
     font-weight: 100;
 }
+
+#firstSteps label
+{
+    width: 100%;
+    text-align: center;
+    font-size: 120%;
+}
