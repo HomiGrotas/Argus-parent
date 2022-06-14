@@ -69,6 +69,7 @@ const Menu = () => {
                 <Dropdown.Item className="dropdownItem" href="/blockedWebsites">Blocked Websites</Dropdown.Item>
                 <Dropdown.Item className="dropdownItem" href="/blockedApps">Blocked Apps</Dropdown.Item>
                 <Dropdown.Item className="dropdownItem" href="/timeLimit">Time Limit</Dropdown.Item>
+                <Dropdown.Item className="dropdownItem" href="/appsHistory">Apps History</Dropdown.Item>
             </DropdownButton>
         </div>
     );

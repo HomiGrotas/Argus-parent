@@ -12,6 +12,7 @@ import Dashboard from './dashboard';
 import BlockedApps from "./blockedApps";
 import BlockedWebsites from "./blockedWebsites";
 import TimeLimit from "./timeLimit";
+import AppsHistory from "./appsHistory";
 import Help from "./help";
 
 
@@ -27,6 +28,7 @@ const Webpages = () => {
                 <Route path='/blockedWebsites' element={<BlockedWebsites/>} />
                 <Route path='/blockedApps' element={<BlockedApps/>} />
                 <Route path='/timeLimit' element={<TimeLimit/>} />
+                <Route path='/appsHistory' element={<AppsHistory/>} />
                 <Route path='/help' element={<Help/>} />
             </Routes>
         </Router>

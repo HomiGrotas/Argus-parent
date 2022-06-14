@@ -5,10 +5,10 @@ import BlockedWebsitesAPI from '../api/childBlockedWebsitesAPI';
 import Auth from './utils/auth';
 import Parent from '../api/parent';
 import FormButton from './utils/forms';
+import ChildSelect from './utils/childSelect';
 
 import React, {useState} from 'react'
 import {useNavigate} from "react-router-dom";
-import Select from 'react-select'
 
 async function loadParent(email, password, setParent, setErrorPreview){
     const resp = await Parent.get(email, password, setErrorPreview);
@@ -107,18 +107,8 @@ const BlockedAppsList = (props) => {
 
 
 const BlockedAppsContent = (props) => {
-    const options = [];
     const [blockedApps, setBlockedApps] = useState({});
     const [childID, setChildID] = useState(null);
-
-    if (props.parent)
-    {
-        props.parent.children.map(
-            function(child){
-                options.push({value: child.id, label:child.nickname});
-            }
-        )
-    }
 
     async function loadChildInfo(e){
         if (e){
@@ -130,9 +120,8 @@ const BlockedAppsContent = (props) => {
 
     return (
         <div id='BlockedAppsContent'>
-            <div id='selectChild'>
-                <Select options={options} placeholder="Please select a child" onChange={loadChildInfo}/>
-            </div>
+            <ChildSelect parent={props.parent} loadChildInfo={loadChildInfo}/>
+
 
             <div id="halfs">
                 <BlockedAppsList apps={blockedApps} setBlockedApps={setBlockedApps} childID={childID}/>

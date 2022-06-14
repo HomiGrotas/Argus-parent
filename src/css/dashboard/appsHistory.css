@@ -1,0 +1,46 @@
+#selectChild{
+    height: 8%;
+    border: 0px;
+    background-color: aqua;
+}
+
+#AppsHistory{
+    font-size: 1.65vw;
+}
+
+#AppsHistoryContent
+{
+    height: 93%;
+}
+
+#appsHistoryTableDiv
+{
+    background-color: #4472C4;
+    height: fit-content;
+    min-height: 92%;
+    padding-top: 2%;
+}
+
+#appsHistoryTableDiv table
+{
+    margin-left: 10%;
+    width: 80%;
+    background-color: white;
+    border-radius: 15px;
+}
+
+
+#appsHistoryTableDiv th, #appsHistoryTableDiv td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+#appsHistoryTableDiv tr:hover {
+    background-color: rgb(211, 233, 233);
+}
+
+#NoHistory
+{
+    text-align: center !important;
+}
