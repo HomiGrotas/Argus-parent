@@ -1,7 +1,8 @@
 import '../../../css/dashboard/content-parts/popularity.css'
-import { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import ParentContext from '../../utils/parentHook';
-
+import Auth from '../../utils/auth';
+import PopularityAPI from '../../../api/popularityAPI';
 
 const FirstSteps = () =>
 {
@@ -21,11 +22,45 @@ const FirstSteps = () =>
     );
 }
 
-const popularity = () => 
+const Popularity = () => 
 {
+    const auth = Auth.GetAuth();
+    const [error, setError] = useState();
+    const [popularity, setPopularity] = useState([]);
+    let index = 0;
+
+    async function loadStatistics()
+    {
+        const p = await PopularityAPI.get(auth.e, auth.p, setError)
+        setPopularity(p)
+        console.log(popularity)
+    }
+
+    React.useEffect(() =>{
+        loadStatistics()
+        }, []
+    )
+
     return (
         <div id='popularity'>
-
+            <table>
+                <tbody>
+                    <tr>
+                        <th>#</th>
+                        <th>App</th>
+                        <th>Amount</th>
+                    </tr>
+                    {popularity.map(
+                        app => 
+                            <tr key={++index}>
+                                <td>{index+1}</td>
+                                <td>{app.app_name}</td>
+                                <td>{app.amount}</td>
+                            </tr>
+                    )
+                    }
+                </tbody>
+            </table>
         </div>
     );
 }
@@ -36,7 +71,7 @@ const PopularitySection = () => {
 
     return (
         <div className="Section" id="popularitySection">
-            <FirstSteps/>
+            {parent && parent.children.length === 0 ? <FirstSteps/> : <Popularity/>}
         </div>
     );
 }
