@@ -28,6 +28,12 @@ const ChangeTimeLimit = (props) =>
         if (isNaN(timeLimitAmount))
         {
             setError("Time limit must be a number")
+        }else if(!props.childID)
+        {
+            setError("No child selected");
+        }else if(!selectedDay)
+        {
+            setError("No day selected")
         }
         else{
             if (await TimeLimitAPI.patch(auth.e, auth.p, setError, selectedDay, timeLimitAmount, props.childID) === 1)
@@ -35,6 +41,7 @@ const ChangeTimeLimit = (props) =>
                 var newTimeLimits = props.days;
                 newTimeLimits[selectedDay] = timeLimitAmount;
                 props.setDays({...newTimeLimits});
+                setTimeLimit("");
             }
         }
     }
