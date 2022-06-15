@@ -2,8 +2,7 @@ import configData from "../config.json"
 
 class AppsHistoryAPI
 {
-    //static endpoint = configData.SERVER_BASE_URL + "/app_history";
-    static endpoint = "http://127.0.0.1" + "/app_history";
+    static endpoint = configData.SERVER_BASE_URL + "/app_history";
 
     static async get(email, password, id, setError, amount)
     {
