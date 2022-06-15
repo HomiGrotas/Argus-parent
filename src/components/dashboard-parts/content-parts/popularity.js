@@ -32,8 +32,8 @@ const Popularity = () =>
     async function loadStatistics()
     {
         const p = await PopularityAPI.get(auth.e, auth.p, setError)
-        setPopularity(p)
-        console.log(popularity)
+        setPopularity(p.slice(0, 5));
+        console.log(popularity);
     }
 
     React.useEffect(() =>{
