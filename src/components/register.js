@@ -30,6 +30,12 @@ const RegistrationForm = () => {
             setErrorPreview("Password minimum length is 6 chars");
             return false;
         }
+        if(!/[a-zA-Z]/.test(password))
+        {
+            setErrorPreview("Password should contain at least one letter");
+            return false;
+
+        }
         return true;
     }
     
@@ -62,7 +68,7 @@ const RegistrationForm = () => {
           <table>
               <tbody>
               <FormButton type="email" placeholder=" Email" tip="Please enter your email here" stateHook={email} setter={setEmail}/>
-              <FormButton type="password" placeholder=" Password" tip="Minimum password length is 6 chars" stateHook={password} setter={setPassword}/>
+              <FormButton type="password" placeholder=" Password" tip="Minimum password length is 6 chars and should contain at least one letter" stateHook={password} setter={setPassword}/>
               <FormButton type="password" placeholder=" Password Confirmation" tip="Please confirm your password" stateHook={vPassword} setter={setVPassword}/>
               <FormButton type="text" placeholder=" Nickname" tip="Please choose a nickname" stateHook={nickname} setter={setNickname}/>
               </tbody>

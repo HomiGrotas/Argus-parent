@@ -24,12 +24,15 @@
 {
     width: 100%;
     height: 100%;
+    height: fit-content;
 }
 
 #popularity th, #appsHistoryTableDiv td {
     border-bottom: 1px solid #ddd;
     width: 10%;
+    height: 10%;
 }
+
 
 #popularity tr:hover {
     background-color: rgb(211, 233, 233);

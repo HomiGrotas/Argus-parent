@@ -31,7 +31,7 @@ const Popularity = () =>
 
     async function loadStatistics()
     {
-        const p = await PopularityAPI.get(auth.e, auth.p, setError)
+        var p = await PopularityAPI.get(auth.e, auth.p, setError)
         setPopularity(p.slice(0, 5));
         console.log(popularity);
     }
@@ -49,7 +49,7 @@ const Popularity = () =>
                         <th>#</th>
                         <th>App</th>
                         <th>Amount</th>
-                    </tr>
+                    </tr>                
                     {popularity.map(
                         app => 
                             <tr key={++index}>

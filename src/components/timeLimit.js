@@ -41,7 +41,7 @@ const ChangeTimeLimit = (props) =>
                 var newTimeLimits = props.days;
                 newTimeLimits[selectedDay] = timeLimitAmount;
                 props.setDays({...newTimeLimits});
-                setTimeLimit("");
+                setTimeLimitAmount("");
             }
         }
     }
